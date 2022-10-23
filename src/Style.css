@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Familjen Grotesk", sans-serif;
+  background: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.Nav--main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 30px;
+}
+
+.imgDiv {
+  width: 210px;
+  height: auto;
+}
+
+.img-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.Nav-link {
+  margin-left: 15rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li {
+  position: relative;
+  margin-right: 20px;
+  padding-bottom: 2px;
+}
+
+ul li::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+
+ul li:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.4s;
+}
+
+/* Section -A Area */
+
+section {
+  position: relative;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-transform: uppercase;
+}
+.section-inner {
+  position: absolute;
+  bottom: 200px;
+  left: 150px;
+  max-width: 560px;
+}
+/* backgrnd images */
+.section-a {
+  background-image: url("../public/img/section-a.webp");
+}
+.section-b {
+  background-image: url("../public/img/section-b.webp");
+}
+.section-c {
+  background-image: url("../public/img/section-c.webp");
+}
+.section-d {
+  background-image: url("../public/img/section-d.webp");
+}
+.section-e {
+  background-image: url("../public/img/section-e.webp");
+}
+.section-f {
+  background-image: url("../public/img/section-f.webp");
+}
+
+.section-inner h4 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  font-weight: 300;
+  animation: fandeInUp 0.5s ease-in-out;
+}
+.section-inner h2 {
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fandeInUp 0.5s ease-in-out 0.2s;
+  animation-fill-mode: both;
+}
+
+.section-inner a {
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  min-width: 130px;
+  padding: 15px 50px;
+  margin-top: 10px;
+  border: 2px solid white;
+  text-transform: uppercase;
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 2;
+
+  animation: fandeInUp 0.5s ease-in-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.btn:hover span {
+  color: black;
+}
+
+.btn .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn:hover .hover {
+  transform: translateY(0);
+}
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeBounce 4s infinite;
+}
+
+/* Footer */
+
+footer {
+  position: relative;
+  padding: 55px 0;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer ul li {
+  margin-right: 30px;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 2.5;
+  transition: color 0.6s;
+}
+
+footer ul li:hover {
+  color: #aaa;
+}
+
+.hambuger {
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  z-index: 10;
+  cursor: pointer;
+  width: 20px;
+  background: none;
+  border: none;
+}
+
+.hambuger-top,
+.hambuger-middle,
+.hambuger-bottom {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: white;
+  transition: all 0.5s;
+}
+
+.hambuger-middle {
+  transform: translateY(5px);
+}
+
+.hambuger-bottom {
+  transform: translateY(10px);
+}
+/* transition hambuger to X when open */
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hambuger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hambuger-middle {
+  display: none;
+}
+
+.open .hambuger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* overlay */
+
+.overlay-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  overflow: hidden;
+}
+
+/* hide mobile menu */
+.mobile-only {
+  display: none;
+}
+
+.mobile-main-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  z-index: 4;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* bring menu from right */
+.show-menu {
+  transform: translateX(0);
+}
+
+.mobile-main-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  padding: 50px;
+  width: 100%;
+}
+
+.mobile-main-menu ul li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-bottom: 1px #555 dotted;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 8px;
+}
+
+.mobile-main-menu ul li a {
+  color: #fff;
+  transition: color 0.6s;
+}
+
+.mobile-main-menu ul li a:hover {
+  color: #aaa;
+}
+
+/* Animation  */
+
+@keyframes fandeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(140px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media queries */
+@media (max-width: 960px) {
+  /* hide desktop mmenu */
+  .Nav-link {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-inner {
+    bottom: 75px;
+    left: 20px;
+  }
+  .section-inner h2 {
+    font-size: 40px;
+  }
+
+  footer ul li:first-child {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  footer ul li {
+    margin-right: 15px;
+  }
+
+  .img-logo {
+    width: 150px;
+    margin: auto;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
